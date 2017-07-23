@@ -30,7 +30,7 @@
     <header>
         <h1>Friendsum</h1>
         <p>
-            I'm making this super simple for now. No crazy CSS or class names or anything like that, just simple HTML and JS. I'll deal with the rest later.
+            Yet another custom lorem ipsum generator, this time using quotes from the TV show <a href="https://www.youtube.com/watch?v=wxKjuqadoh0">Friends</a>.
         </p>
         <hr />
     </header>
@@ -57,18 +57,11 @@
             "Come on Ross, you’re a paleontologist, dig a little deeper.",
         ];
 
-        // Shuffle the array into a random order.
-        var j, x, i;
-        for (i = quotes.length; i; i--) {
-            j = Math.floor(Math.random() * i);
-            x = quotes[i - 1];
-            quotes[i - 1] = quotes[j];
-            quotes[j] = x;
-        }
-
         var paragraphs = 3;
         for (x = 0; x < paragraphs; x++) {
             document.getElementById("main_holder").innerHTML += "<div class='quotes_div' id='quotes_div_" + x + "'></div>";
+
+            shuffle(quotes);
 
             // Foreach through the array to display them on the page.
             var random_num = Math.floor(Math.random() * quotes.length) + 1;
@@ -76,6 +69,17 @@
 
             for (i = 0; i < random_num; i++) {
                 document.getElementById("quotes_div_" + x).innerHTML += quotes[i] + " ";
+            }
+        }
+
+        // Shuffle the array into a random order.
+        function shuffle(harray) {
+            var j, x, i;
+            for (i = harray.length; i; i--) {
+                j = Math.floor(Math.random() * i);
+                x = harray[i - 1];
+                harray[i - 1] = harray[j];
+                harray[j] = x;
             }
         }
 
