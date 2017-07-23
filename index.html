@@ -41,13 +41,15 @@
         <button onclick="main(4)">Four</button>
         <button onclick="main(5)">Five</button>
         <button onclick="main(6)">Six</button>
+        <button onclick="main(7)">Seven</button>
+        <button onclick="main(8)">Eight</button>
+        <button onclick="main(9)">Nine</button>
         <hr />
     </header>
     <section id="main_holder">
     </section>
 
     <script>
-
         function main(paragraphs) {
             // Clear before running the whole function.
             document.getElementById("main_holder").innerHTML = "";
@@ -68,6 +70,44 @@
                 "Well, I’m sorry if I’m not a middle-aged black woman. And I’m also sorry if sometimes I go to the wrong audition.",
                 "Hey, Ross, I got a science question: If the homo sapiens were, in fact, HOMO sapiens…is that why they’re extinct?” Joey, homo sapiens are PEOPLE. Hey, I’m not judgin’!",
                 "Come on Ross, you’re a paleontologist, dig a little deeper.",
+                "15 Yemen Road, Yemen.",
+                "Wait, what are you doing? Getting dressed. Why? Well, when I walk outside naked, people throw garbage at me.",
+                "THIS IS BRAND NEW INFORMATION!",
+                "Yeah, I definitely don’t like the name Ross. What a weird way to kick me when I’m down.",
+                "It’s a moo point. It’s like a cow’s opinion; it doesn’t matter. It’s moo.",
+                "Uh, uh, we’ll flip for it, ducks or clowns. Oh, we’re gonna flip for the baby? You got a better idea? All right, call it in the air. Heads. Heads it is. Yess! Whoo! We have to assign heads to something! Right, okay, okay, uhhh, ducks is heads, because ducks…have heads. What kinda’ scary-ass clowns came to your birthday!?",
+                "I remember the day I got my first paycheck, there was a cave-in in one of the mines.",
+                "Phoebe, you worked in a mine?",
+                "No I worked in a Dairy Queen.",
+                "You could not be any more wrong. You could try, but you would not be successful.",
+                "You’ve been BAMBOOZLED!",
+                "Man this is weird. You ever realize Captain Crunch’s eyebrows are actually on his hat?",
+                "You think that’s what’s weird? Joey, the man’s been captain of a cereal for the last 40 years.",
+                "Paper…snow…..a ghost!!!",
+                "Chandler entered a Vanilla Ice look-alike contest and WON! Ross came fourth and CRIED!",
+                "Condoms? We don’t know how long we’re gonna be stuck here. We might have to repopulate the world. And condoms are the way to do that?",
+                "It was summer… and it was hot. Rachel was there… A lonely grey couch…”OH LOOK!” cried Ned, and then the kingdom was his forever. The End.",
+                "So, uh, what did the insurance company say? Oh, they said uh, “You don’t have insurance here so stop calling us.”",
+                "Why do you have to break up with her? Be a man. Just stop calling.",
+                "So basically you get your ya-yas from taking money from all of your friends? Yeah. Yes, and I get my ya-yas from Ikea. You have to put them together yourself, but they cost a little less, so…",
+                "My motto is get out before they go down. That is so not my motto.",
+                "Oh, are you setting Ross up with someone? Does she have a wedding dress?",
+                "Hey, Mon, look, I’m melting butter. That’s great, Rach. You now have the cooking skills of a hot day.",
+                "Je m’appelle Claude",
+                "I’m not so good with the advice. Can I interest you in a sarcastic comment?",
+                "I swear to god, Dad. That’s not how they measure pants!",
+                "Hey, you know what I just realized? ‘Joker’ is ‘poker’ with a ‘J’. Coincidence? Hey, that’s ‘joincidence’ with a ‘C’.",
+                "Just because she went to Yale drama, she thinks she’s like the greatest actress since, since, sliced bread! Ah, Sliced Bread, a wonderful Lady MacBeth.",
+                "Suppose we’re a divorced couple. Okay. And I got custody of the kid, right? Now, suppose the kid dies and I gotta buy a new kid.",
+                "Raspberries? Good. Ladyfingers? Good. Beef? GOOD!",
+                "Chandler. I sensed it was you.",
+                "Ah, salmon skin roll.",
+                "Okay, is everybody clear? We’re gonna pick it up and move it. All we need is teamwork, okay? We’re gonna lift the car… and slide it out. Lift… and slide.",
+                "Could I BE wearing any more clothes?",
+                "JOEY DOESN’T SHARE FOOD.",
+                "Hey, just so you know: it’s NOT that common, it DOESN’T “happen to every guy,” and it IS a big deal!",
+                "They’re still not coming on man! And the lotion and the powder have made a paste!",
+                "Fine! Judge all you want but married a lesbian, left a man at the alter, fell in love with a gay ice dancer, threw a girl’s wooden leg in a fire, LIVE IN A BOX!",
             ];
 
             for (x = 0; x < paragraphs; x++) {
@@ -76,8 +116,7 @@
                 shuffle(quotes);
 
                 // Foreach through the array to display them on the page.
-                var random_num = Math.floor(Math.random() * quotes.length) + 1;
-
+                var random_num = Math.floor(Math.random() * 7) + 1;
                 for (i = 0; i < random_num; i++) {
                     document.getElementById("quotes_div_" + x).innerHTML += quotes[i] + " ";
                 }
