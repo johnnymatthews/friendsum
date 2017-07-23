@@ -23,14 +23,57 @@
 </head>
 
 <body>
-    <h1>Friendsum</h1>
-    <p>
-        I'm making this super simple for now. No crazy CSS or class names or anything like that, just simple HTML and JS. I'll deal with the rest later.
-    </p>
-    <hr />
-    <div class="">
+    <header>
+        <h1>Friendsum</h1>
+        <p>
+            I'm making this super simple for now. No crazy CSS or class names or anything like that, just simple HTML and JS. I'll deal with the rest later.
+        </p>
+        <hr />
+    </header>
+    <section>
+        <div id="show_quotes_div">
 
-    </div>
+        </div>
+    </section>
+
+    <script>
+
+        // Create Friends Quotes Array.
+        var quotes = [
+            "Welcome to the real world. It sucks. You’re gonna love it!",
+            "Oh… my… God!",
+            "How long do cats live? Like assuming you don’t throw ‘em under a bus or something?",
+            "You know how you come home at the end of the day and throw your jacket on a chair? Yeah. Well, instead of a jacket, it’s a pile of garbage. And instead of a chair, it’s a pile of garbage. And instead of the end of the day, it’s the end of time and garbage is all that has survived.",
+            "Guys, guess what?! Ok, the fifth dentist caved and now they’re ALL recommending Trident?",
+            "WHOOOPAH!",
+            "Sure I peed on her. And if I had to, I’d pee on any one of you!",
+            "He must decide. He must decide. Even though I made him up, he must decide!",
+            "Here come the meat sweats…",
+            "Wow, you guys sure have a lot of books about being a lesbian. Well, you know, you have to take a course. Otherwise they don’t let you do it.",
+            "All right, kids, I gotta get to work. If I don’t input those numbers… it doesn’t make much of a difference.",
+            "Well, I’m sorry if I’m not a middle-aged black woman. And I’m also sorry if sometimes I go to the wrong audition.",
+            "Hey, Ross, I got a science question: If the homo sapiens were, in fact, HOMO sapiens…is that why they’re extinct?” Joey, homo sapiens are PEOPLE. Hey, I’m not judgin’!",
+            "Come on Ross, you’re a paleontologist, dig a little deeper.",
+        ];
+
+        // Shuffle the array into a random order.
+        var j, x, i;
+        for (i = quotes.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            x = quotes[i - 1];
+            quotes[i - 1] = quotes[j];
+            quotes[j] = x;
+        }
+
+        // Foreach through the array to display them on the page.
+        var random_num = Math.floor(Math.random() * quotes.length) + 1;
+        console.log(random_num)
+
+        for (looper = 0; looper < random_num; looper++) {
+            document.getElementById("show_quotes_div").innerHTML += quotes[looper] + " ";
+        }
+
+    </script>
 </body>
 
 </html>
