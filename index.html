@@ -19,6 +19,10 @@
         h3 {
             line-height: 1.2
         }
+
+        .quotes_div {
+            padding: 20px;
+        }
     </style>
 </head>
 
@@ -30,10 +34,7 @@
         </p>
         <hr />
     </header>
-    <section>
-        <div id="show_quotes_div">
-
-        </div>
+    <section id="main_holder">
     </section>
 
     <script>
@@ -65,12 +66,17 @@
             quotes[j] = x;
         }
 
-        // Foreach through the array to display them on the page.
-        var random_num = Math.floor(Math.random() * quotes.length) + 1;
-        console.log(random_num)
+        var paragraphs = 3;
+        for (x = 0; x < paragraphs; x++) {
+            document.getElementById("main_holder").innerHTML += "<div class='quotes_div' id='quotes_div_" + x + "'></div>";
 
-        for (looper = 0; looper < random_num; looper++) {
-            document.getElementById("show_quotes_div").innerHTML += quotes[looper] + " ";
+            // Foreach through the array to display them on the page.
+            var random_num = Math.floor(Math.random() * quotes.length) + 1;
+            console.log(random_num)
+
+            for (i = 0; i < random_num; i++) {
+                document.getElementById("quotes_div_" + x).innerHTML += quotes[i] + " ";
+            }
         }
 
     </script>
