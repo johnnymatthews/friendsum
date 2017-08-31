@@ -1,6 +1,6 @@
 # friendsum
-It's like a standard lorem-ipsum generator, but for Friends quotes instead. It's probably already been done somewhere, but I just wanted something to play around with as a Sunday afternoon project. Use it if you want, or don't.
+So this started out as a lorem-ipsum generator just for Friends, but now it's evolved into a lorem-ipsum generator for just about every TV on the ruddy planet. I think I have a problem.
 
 ---
 
-I'm planning to build it out of vanilla JS to keep things nice and simple. I *may* throw in a css framework in there to make things looks pretty. Or I may not. Haven't decided yet.
+Everything in Vanilla. No frameworks of JS libraries or anything like that. There's no CDN or fonts to download from somewhere else, just one file. So if you get super bored, you can throw it into an electron wrapper and run it on your Chromebook during a flight to Dubai or whatever.
