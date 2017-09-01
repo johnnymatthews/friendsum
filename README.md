@@ -12,3 +12,4 @@ Everything is Vanilla. No frameworks or JS libraries or CDNs or fonts to downloa
  - ~~Responsify the page.~~
  - ~~Get some Scrubs quotes~~.
  - ~~Style the buttons to look better~~.
+ - Turn buttons into navbar.
