@@ -10,3 +10,4 @@ Everything is Vanilla. No frameworks or JS libraries or CDNs or fonts to downloa
 
  - Copy quotes as HTML.
  - Responsify the page.
+ - ~~Get some Scrubs quotes~~.
