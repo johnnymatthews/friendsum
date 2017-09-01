@@ -14,14 +14,14 @@
             color: #444;
             padding: 0px 15px 0px 15px;
         }
-        section > div {
-            padding: 20px;
-        }
         hr {
         	margin: 30px 10px 10px 10px;
         }
+        details summary {
+        	text-decoration: underline;
+        }
         button {
-            background-color: red;
+        	background-color: green;
             border: none;
             color: white;
             padding: 10px 27px;
@@ -29,6 +29,12 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+        }
+        tv-show  > details > button {
+        	background-color: red;
+        }
+        section > div {
+            padding: 20px;
         }
     </style>
 </head>
@@ -38,23 +44,27 @@
         <p>
             Yet another custom lorem ipsum generator, this time using quotes from the TV show <a href="https://www.youtube.com/watch?v=wxKjuqadoh0">Friends</a>. Well, it was originally just Friends, but then Scrubs and Rick & Morty got added. Use it was a filler in your websites if you want. Or not, it's up to you.
         </p>
-        <p>
-        	<strong>TV Show:</strong>
-        	<button onclick="tvLoad('friends')">Friends</button>
-        	<button onclick="tvLoad('rick_and_morty')">Rick & Morty</button>
-        	<button onclick="tvLoad('scrubs')">Scrubs</button>
-        </p>
-        <p>
-        	<strong>Paragraphs: </strong>
-	        <button onclick="numberLoad(1)">One</button>
-	        <button onclick="numberLoad(2)">Two</button>
-	        <button onclick="numberLoad(3)">Three</button>
-	        <button onclick="numberLoad(4)">Four</button>
-	        <button onclick="numberLoad(5)">Five</button>
-	        <button onclick="numberLoad(6)">Six</button>
-	        <button onclick="numberLoad(7)">Seven</button>
-	        <button onclick="numberLoad(8)">Eight</button>
-  		</p>
+        <tv-show>
+        	<details open>
+	        	<summary>TV Show:</summary>
+	        	<button onclick="tvLoad('friends')">Friends</button>
+	        	<button onclick="tvLoad('rick_and_morty')">Rick & Morty</button>
+	        	<button onclick="tvLoad('scrubs')">Scrubs</button>
+        	</details>
+        </tv-show>
+        <paragraphs>
+	        <details open>
+	        	<summary>Paragraphs: </summary>
+		        <button onclick="numberLoad(1)">One</button>
+		        <button onclick="numberLoad(2)">Two</button>
+		        <button onclick="numberLoad(3)">Three</button>
+		        <button onclick="numberLoad(4)">Four</button>
+		        <button onclick="numberLoad(5)">Five</button>
+		        <button onclick="numberLoad(6)">Six</button>
+		        <button onclick="numberLoad(7)">Seven</button>
+		        <button onclick="numberLoad(8)">Eight</button>
+	  		</details>
+  		</paragraphs>
         <hr />
     </header>
     <section id="main_holder">
