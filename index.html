@@ -1,96 +1,88 @@
-<!DOCTYPE html>
-<html>
+<!doctype HTML>
+
+<!-- head -->
+
+<html lang="en">
 <head>
-    <metacharset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendsum: Yet Another Lorem Ipsum Generator</title>
-    <style type="text/css">
-        /* GLOBAL */
-        body {
-            font-family: sans-serif;
-            margin: 40px auto;
-            max-width: 650px;
-            line-height: 1.6;
-            font-size: 18px;
-            color: #444;
-            padding: 0px 15px 0px 15px;
-        }
-        hr {
-        	margin: 30px 10px 10px 10px;
-        }
-        /* /GLOBAL */
-        details {
-        	margin-bottom: 20px;
-        }
-        details summary {
-        	text-decoration: underline;
-        }
-        button {
-        	background-color: green;
-            border: none;
-            color: white;
-            padding: 10px 27px;
-            min-width: 100px;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        tv-show  > details > button {
-        	background-color: red;
-        }
-        section > div {
-            padding: 20px;
-        }
-    </style>
+	<title>Friendsum: Yet Another Lorem Ipsum Generator</title>
+	
+	<!-- meta -->
+	<meta charset=utf-8>
+	<meta name="description" content="Yet another Lorem Ipsum generator. Like we really needed another one...">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	
+	<!-- css -->
+	<link href="css/bare.min.css" rel="stylesheet">
+
+	<!-- js -->
+	<script src="js/clipboard.min.js"></script>
 </head>
+
+<!-- body -->
+
 <body>
-    <header>
-        <h1>Friendsum</h1>
-        <p>
-            Yet another custom lorem ipsum generator, this time using quotes from the TV show <a href="//www.youtube.com/watch?v=wxKjuqadoh0">Friends</a>. Well, it was originally just Friends, but then <a href="//www.youtube.com/watch?v=STp1tesmVXc">Scrubs</a> and <a href="//www.youtube.com/watch?v=hQdp7rN6vUs">Rick & Morty</a> got added. Use it was a filler in your websites if you want. Or not, it's up to you. You can find the <a href="//www.github.com/mohnjatthews/friendsum">code on GitHub here</a>
-        </p>
-        <tv-show>
-        	<details open>
-	        	<summary>TV Show:</summary>
-	        	<button onclick="tvLoad('friends')">Friends</button>
-	        	<button onclick="tvLoad('rick_and_morty')">Rick & Morty</button>
-	        	<button onclick="tvLoad('scrubs')">Scrubs</button>
-        	</details>
-        </tv-show>
-        <paragraphs>
-	        <details open>
-	        	<summary>Paragraphs: </summary>
-		        <button onclick="numberLoad(1)">One</button>
-		        <button onclick="numberLoad(2)">Two</button>
-		        <button onclick="numberLoad(3)">Three</button>
-		        <button onclick="numberLoad(4)">Four</button>
-		        <button onclick="numberLoad(5)">Five</button>
-		        <button onclick="numberLoad(6)">Six</button>
-		        <button onclick="numberLoad(7)">Seven</button>
-		        <button onclick="numberLoad(8)">Eight</button>
-	  		</details>
-  		</paragraphs>
-        <hr />
-    </header>
-    <section id="main_holder">
-    </section>
+	
+<!-- nav -->
+
+<nav><!-- use fx attribute for fixed positioning -->
+	<label>
+		<input type="checkbox">
+		<header>
+			<a href="http://www.barecss.com">Friendsum</a>
+		</header>
+		
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#api">API</a></li>
+			<li><a href="//github.com/mohnjatthews/friendsum">Github</a></li>
+		</ul>
+	</label>
+</nav>
+
+<!-- standard section for content -->
+
+<section mt->
+	<h1>Friendsum</h1>
+	
+	<p>Yet another custom lorem ipsum generator, this time using quotes from the TV show <a href="//www.youtube.com/watch?v=wxKjuqadoh0">Friends</a>. Well, it was originally just Friends, but then <a href="//www.youtube.com/watch?v=STp1tesmVXc">Scrubs</a> and <a href="//www.youtube.com/watch?v=hQdp7rN6vUs">Rick & Morty</a> got added. Use it was a filler in your websites if you want. Or not, it's up to you. You can find the <a href="//www.github.com/mohnjatthews/friendsum">code on GitHub here</a></p>
+
+	<grid>
+		<div col="1/3">
+			<button primary full onclick="main('friends')">Friends</button>
+		</div>
+		
+		<div col="1/3">
+			<button primary full onclick="main('scrubs')">Scrubs</button>
+		</div>
+
+		<div col="1/3">
+			<button primary full onclick="main('rick_and_morty')">Rick & Morty</button>
+		</div>
+	</grid>
+</section>
+
+<section id="output">
+	<div>
+		<h2>Output</h2>
+		<button id="copyHtml" data-clipboard-target="#main_holder">Copy</button>	
+	</div>
+	
+	<div id="main_holder">
+	</div>
+</section>
+
     <script>
-    	// Holder vars so the user can input via loads of different methods.
-    	var last_number_input = 3;
-    	var last_tv_input = 'friends';
-        function main(paragraphs, quotes) {
-        	last_time = paragraphs; // Record number of paragraphs so we can use the same amount loading the dropdown menu.
-            
+        function main(quotes) {
             document.getElementById("main_holder").innerHTML = ""; // Clear before running the whole function.
-            var quotes = getQuotes(quotes); // Grab the correct quotes array.
-            
-            for (x = 0; x < paragraphs; x++) {
-                document.getElementById("main_holder").innerHTML += "<div class='quotes_div' id='quotes_div_" + x + "'></div>";
+            var quotes = getQuotes(quotes);
+            for (x = 0; x < 5; x++) {
+                var foo = "";
                 shuffle(quotes);
-                var random_num = Math.floor(Math.random() * 7) + 1; // Foreach through the array to display them on the page.
-                for (i = 0; i < random_num; i++) {
-                    document.getElementById("quotes_div_" + x).innerHTML += quotes[i] + " ";
+
+                for (i = 0; i < 8; i++) {
+                	foo = foo + quotes[i] + " ";
                 }
+                document.getElementById("main_holder").innerHTML += "<p>" + foo + "</p>";
             }
         }
         function shuffle(harray) { // Shuffle the array into a random order.
@@ -102,14 +94,6 @@
                 harray[j] = x;
             }
         }
-        function tvLoad(tv_show) {
-    		last_tv_input = tv_show;
-    		main(last_number_input, tv_show);
-    	}
-    	function numberLoad(number) {
-    		last_number_input = number;
-    		main(number, last_tv_input);
-    	}
         function getQuotes(tv_show) { // Gets an array of quotes from somewhere...
         	var quotes = [];
         	switch(tv_show) {
@@ -269,8 +253,11 @@
 			}
 			return quotes;
         }
-        window.onload = main(3, 'friends'); // Run everything on first window load.
+
+        window.onload = main('friends'); // Run everything on first window load.
+        new ClipboardJS('#copyHtml');
     </script>
+
 </body>
 
 </html>
