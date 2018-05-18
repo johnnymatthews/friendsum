@@ -153,7 +153,7 @@ if(($url_query == "friends") || ($url_query == "scrubs") || ($url_query == "rick
 	}
 } else {
 	// Prepare for user failure.
-	print 'Invalid TV Show. Valid inputs are "friends", "scrubs", and "rick_and_morty".';
+	print 'INVALID SHOW INPUT: Valid inputs are "friends", "scrubs", and "rick_and_morty". See "http://mohnjatthews.com/projects/friendsum#api" for more information';
 	die;
 }
 
