@@ -16,7 +16,6 @@
 			</header>
 			
 			<ul>
-				<li><a href="#api">API</a></li>
 				<li><a href="//github.com/mohnjatthews/friendsum">Github</a></li>
 			</ul>
 		</label>
@@ -46,21 +45,6 @@
 		
 		<div id="main_holder">
 		</div>
-	</section>
-	<section id="api">
-		<h2>API</h2>
-		<p>So the API's super simple. There's no JSON objects or anything like that to deal with. You just go to <code>/api.php?{tv_show}</code> where <code>{tv_show}</code> is one of the following:
-			<ul>
-				<li><code>friends</code></li>
-				<li><code>scrubs</code></li>
-				<li><code>rick_and_morty</code></li>
-			</ul>
-			So something like this would work: <code>/api.php?friends</code>. This is CURLable too: <code>curl 192.168.33.10/api.php?friends</code>.
-		</p>
-		<section>
-			<h3>Multiple Variables</h3>
-			<p>The API doesn't yet take multiple arguments. If you supply more than one, it'll just take the last one in the URL string. For example, if you supplied <code>/api.php?friends?scrubs?rick_and_morty</code> the API would return Rick and Morty quotes.</p>
-		</section>
 	</section>
 
 	<section>
