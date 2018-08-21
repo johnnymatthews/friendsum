@@ -11,4 +11,4 @@ So this started out as a lorem-ipsum generator just for Friends, but now it's ev
  - ~~Responsify the page.~~
  - ~~Get some Scrubs quotes~~.
  - ~~Style the buttons to look better~~.
- - ~~API this shin-dig~~
+ - Somehow API this shin dig through Netlify...
