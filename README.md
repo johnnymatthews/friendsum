@@ -9,6 +9,8 @@ So this started out as a lorem-ipsum generator just for Friends, but now it's ev
  - ~~Responsify the page.~~
  - ~~Get some Scrubs quotes~~.
  - ~~Style the buttons to look better~~.
- - Somehow API this shin dig through Netlify...
- - Grab the quotes from seperate JS files.
- - ~~Buy the friendsum.xyz domain~~
+ - Somehow API this shin dig through Netlify.
+ - ~~Grab the quotes from seperate JS files.~~
+ - ~~Buy the friendsum.xyz domain.~~
+ - ~~Grab a Friends font from somewhere.~~
+ - Change background and title when different quotes are selected.
