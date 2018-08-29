@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'friends-font';
+    src: url('../fonts/friends.ttf');
+}
+
 html {
     font-family: sans-serif;
     font-size: 10px;
@@ -15,12 +20,12 @@ html {
 }
 
 body {
-    color: #2e3538;
+    color: #fff;
     margin: 0;
     font-size: 1.4rem;
     line-height: 1.8;
     font-weight: 300;
-    background-image: url("img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-color: whitesmoke;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,6 +48,10 @@ a:active, a:hover {
 
 b, strong {
     font-weight: 700
+}
+
+h1 {
+    font-family: 'friends-font', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1055,14 +1064,13 @@ h6:not([class]), h6[xx] {
     text-align: justify
 }
 
-/*# sourceMappingURL=bare.min.css.map */
-
 h2 {
     display: inline-block;
 }
 
 #output {
-    background: #e6e6e6;
+    background: #5a6987;
+    opacity: 0.7;
 }
 
 #copyHtml {
