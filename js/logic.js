@@ -1,13 +1,22 @@
-function main(quotes) {
-    document.getElementById("main_holder").innerHTML = ""; // Clear before running the whole function.
-    quotes = getQuotes(quotes);
+let global_quotes = 'friends';
+let as_html = false;
+
+function main() {
+    document.querySelector("#main_holder").innerHTML = ""; // Clear before running the whole function.
+    quotes_array = getQuotes(global_quotes); // Get an array of quotes.
+    
     for (x = 0; x < 5; x++) {
-        let foo = "";
-        shuffle(quotes);
+        let block = "";
+        shuffle(quotes_array);
         for (i = 0; i < 8; i++) {
-            foo = foo + quotes[i] + " ";
+            block = block + quotes_array[i] + " ";
         }
-        document.getElementById("main_holder").innerHTML += "<p>" + foo + "</p>";
+
+        if(as_html == true) {
+            document.querySelector("#main_holder").innerHTML += "<pre><code>&lt;p&gt;" + block + "&lt;/p&gt;</code></pre>";
+        } else {
+            document.querySelector("#main_holder").innerHTML += "<p>" + block + "</p>";
+        }
     }
 }
 
@@ -39,5 +48,23 @@ function getQuotes(tv_show) { // Gets an array of quotes from somewhere...
     }
     return quotes;
 }
-window.onload = main('friends'); // Run everything on first window load.
-new ClipboardJS('#copyHtml');
+
+function setGlobalQuotes(quotes) {
+    global_quotes = quotes;
+    main();
+}
+
+function setAsHtml() {
+    if(as_html == true) {
+        as_html = false;
+        document.querySelector('#viewAsHtml').textContent = "View as HTML";
+    } else {
+        as_html = true;
+        document.querySelector('#viewAsHtml').textContent = "View as Text";
+    }
+    main();
+}
+
+
+
+window.onload = main(); // Run everything on first window load.
