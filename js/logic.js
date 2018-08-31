@@ -4,21 +4,21 @@ let as_html = false;
 function main() {
     document.querySelector("#main_holder").innerHTML = ""; // Clear before running the whole function.
     quotes_array = getQuotes(global_quotes); // Get an array of quotes.
-    
-    // Change background image, header text, and header font.
-    document.body.style.background = `#ffffff url('img/${global_quotes}.jpg') no-repeat fixed bottom`; 
-    document.querySelector("#main-header").className = "";
-    document.querySelector("#main-header").classList.add(`${global_quotes}-header`);
-    document.querySelector("#main-header").textContent = global_quotes;
+    changeBackground();
+    changeHeader();
 
+    // Create 5 paragraphs and shuffle the array each time.
     for (x = 0; x < 5; x++) {
         let block = "";
         shuffle(quotes_array);
+
+        // Add 8 individual quotes into this block.
         for (i = 0; i < 8; i++) {
             block = block + quotes_array[i] + " ";
         }
 
-        if(as_html == true) {
+        // Add the block to the main_holder div.
+        if (document.querySelector('#viewAsHtml').checked === true) {
             document.querySelector("#main_holder").innerHTML += "<pre><code>&lt;p&gt;" + block + "&lt;/p&gt;</code></pre>";
         } else {
             document.querySelector("#main_holder").innerHTML += "<p>" + block + "</p>";
@@ -26,7 +26,8 @@ function main() {
     }
 }
 
-function shuffle(harray) { // Shuffle the array into a random order.
+// Shuffle the array into a random order.
+function shuffle(harray) {
     let j, x, i;
     for (i = harray.length; i; i--) {
         j = Math.floor(Math.random() * i);
@@ -35,7 +36,9 @@ function shuffle(harray) { // Shuffle the array into a random order.
         harray[j] = x;
     }
 }
-function getQuotes(tv_show) { // Gets an array of quotes from somewhere...
+
+// Gets an array of quotes from the quotes.js script
+function getQuotes(tv_show) {
     let quotes = [];
     switch (tv_show) {
         case "friends":
@@ -55,20 +58,32 @@ function getQuotes(tv_show) { // Gets an array of quotes from somewhere...
     return quotes;
 }
 
+// Set global the global global_quotes variable.
 function setGlobalQuotes(quotes) {
     global_quotes = quotes;
     main();
 }
 
+// Change as_html gloabl variable based on the slider button.
 function setAsHtml() {
-    if(as_html == true) {
-        as_html = false;
-        document.querySelector('#viewAsHtml').checked = true;
-    } else {
+    if (document.querySelector('#viewAsHtml').checked == true) {
         as_html = true;
-        document.querySelector('#viewAsHtml').checked = false;
+    } else {
+        as_html = false;
     }
     main();
+}
+
+// Change the background to whatever global_quotes is set to.
+function changeBackground() {
+    document.body.style.background = `#ffffff url('img/${global_quotes}.jpg') no-repeat fixed bottom`;
+}
+
+// Change the header to whatever global_quotes is set to.
+function changeHeader() {
+    document.querySelector("#main-header").className = "";
+    document.querySelector("#main-header").classList.add(`${global_quotes}-header`);
+    document.querySelector("#main-header").textContent = global_quotes;
 }
 
 window.onload = main(); // Run everything on first window load.
