@@ -3,6 +3,16 @@
     src: url('../fonts/friends.ttf');
 }
 
+@font-face {
+    font-family: 'scrubs-font';
+    src: url('../fonts/scrubs.ttf');
+}
+
+@font-face {
+    font-family: 'rick-and-morty-font';
+    src: url('../fonts/rick_and_morty.ttf');
+}
+
 html {
     font-family: sans-serif;
     font-size: 10px;
@@ -25,7 +35,7 @@ body {
     font-size: 1.4rem;
     line-height: 1.8;
     font-weight: 300;
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/friends.jpg");
     background-color: whitesmoke;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,10 +58,6 @@ a:active, a:hover {
 
 b, strong {
     font-weight: 700
-}
-
-h1 {
-    font-family: 'friends-font', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1088,4 +1094,19 @@ h2 {
 
 .footer-text {
     color: #d6d6d6;
+}
+
+.friends-header {
+    font-family: 'friends-font', sans-serif;
+    font-size: 3.0em;
+}
+
+.scrubs-header {
+    font-family: 'scrubs-font', sans-serif;
+    font-size: 3.0em;
+}
+
+.rick-and-morty-header {
+    font-family: 'rick-and-morty-font', sans-serif;
+    font-size: 3.0em;
 }

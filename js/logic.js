@@ -5,6 +5,12 @@ function main() {
     document.querySelector("#main_holder").innerHTML = ""; // Clear before running the whole function.
     quotes_array = getQuotes(global_quotes); // Get an array of quotes.
     
+    // Change background image, header text, and header font.
+    document.body.style.background = `#535959 url('img/${global_quotes}.jpg') no-repeat fixed bottom`; 
+    document.querySelector("#main-header").className = "";
+    document.querySelector("#main-header").classList.add(`${global_quotes}-header`);
+    document.querySelector("#main-header").textContent = global_quotes;
+
     for (x = 0; x < 5; x++) {
         let block = "";
         shuffle(quotes_array);
@@ -38,7 +44,7 @@ function getQuotes(tv_show) { // Gets an array of quotes from somewhere...
         case "scrubs":
             quotes = scrubs_quotes;
             break;
-        case "rick_and_morty":
+        case "rick-and-morty":
             quotes = rick_and_mortey_quotes;
             break;
         default:

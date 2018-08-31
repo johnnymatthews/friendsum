@@ -13,5 +13,5 @@ So this started out as a lorem-ipsum generator just for Friends, but now it's ev
 - ~~Grab the quotes from seperate JS files.~~
 - ~~Buy the friendsum.xyz domain.~~
 - ~~Grab a Friends font from somewhere.~~
-- Change background and title when different quotes are selected.
+- ~~Change background and title when different quotes are selected.~~
 - Click on text to copy it to the clipboard.
