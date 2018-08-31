@@ -63,14 +63,12 @@ function setGlobalQuotes(quotes) {
 function setAsHtml() {
     if(as_html == true) {
         as_html = false;
-        document.querySelector('#viewAsHtml').textContent = "View as HTML";
+        document.querySelector('#viewAsHtml').checked = true;
     } else {
         as_html = true;
-        document.querySelector('#viewAsHtml').textContent = "View as Text";
+        document.querySelector('#viewAsHtml').checked = false;
     }
     main();
 }
-
-
 
 window.onload = main(); // Run everything on first window load.
