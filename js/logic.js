@@ -6,7 +6,7 @@ function main() {
     quotes_array = getQuotes(global_quotes); // Get an array of quotes.
     
     // Change background image, header text, and header font.
-    document.body.style.background = `#535959 url('img/${global_quotes}.jpg') no-repeat fixed bottom`; 
+    document.body.style.background = `#ffffff url('img/${global_quotes}.jpg') no-repeat fixed bottom`; 
     document.querySelector("#main-header").className = "";
     document.querySelector("#main-header").classList.add(`${global_quotes}-header`);
     document.querySelector("#main-header").textContent = global_quotes;
