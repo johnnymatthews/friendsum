@@ -1113,7 +1113,7 @@ h2 {
 .switch {
     float: right;
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     width: 60px;
     height: 34px;
 }
