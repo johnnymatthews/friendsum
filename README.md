@@ -1,3 +1,3 @@
 # [Friendsum.xyz](https://johnnymatthews.github.io/friendsum/)
 
-Yet another lorem ipsum generator.
+Yet another lorem ipsum generator. But this one uses Friends quotes instead of sudo-latin. There's also an API...

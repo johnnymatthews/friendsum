@@ -1,0 +1,17 @@
+{
+  "name": "Friendsum",
+  "version": "1.0.0",
+  "description": "A lorem ipsum generator, but with Friends quotes instead of sudo-latin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.11",
+    "express": "^4.18.2"
+  }
+}
+
