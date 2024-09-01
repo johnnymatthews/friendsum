@@ -1,4 +1,4 @@
-# [Friendsum](https://johnnymatthews.github.io/friendsum/)
+# [Friendsum]([https://johnnymatthews.github.io/friendsum/](https://johnnymatthews.github.io/friendsum/website/))
 
 Yet another lorem ipsum generator. But this one uses Friends quotes instead of sudo-latin. There's a browser-based version in `./website` and a Rust CLI version in `./rust`.
 
