@@ -1,7 +1,7 @@
 use rand::prelude::*;
 use clap::Parser;
 
-/// Output n numbder of quotes from friends, where n is supplied by the user.
+/// Output n number of quotes from the "Friends" TV show, where n is supplied by the user.
 #[derive(Parser)]
 struct Cli {
     /// The number of quotes to return.
@@ -11,7 +11,24 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
     let mut rng = thread_rng();
-    let mut all_quotes = vec![
+
+    // Get quotes.
+    let mut all_quotes = set_quotes();
+    print!(all_quotes);
+
+    // Output user-specified number of quotes quotes.
+    let mut loop_index = 0;
+    while loop_index < args.count {
+        let random_number = rng.gen_range(0..all_quotes.len());
+        let random_element = all_quotes[random_number];
+        all_quotes.remove(random_number);
+        print!("{}", random_element);
+        loop_index += 1;
+    }
+}
+
+fn set_quotes() {
+    let quotes = vec![
         "Welcome to the real world. It sucks. You're gonna love it!",
         "Oh... my... God!",
         "How long do cats live? Like assuming you don't throw ‘em under a bus or something?",
@@ -89,14 +106,5 @@ fn main() {
         "Should I use my invisibility to fight crime or for evil?"
     ];
 
-
-    // Output user-specified number of quotes quotes.
-    let mut loop_index = 0;
-    while loop_index < args.count {
-        let random_number = rng.gen_range(0..all_quotes.len());
-        let random_element = all_quotes[random_number];
-        all_quotes.remove(random_number);
-        print!("{}", random_element);
-        loop_index += 1;
-    }
+    return quotes;
 }
