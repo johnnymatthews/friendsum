@@ -2,15 +2,21 @@
 
 Yet another lorem ipsum generator. But this one uses Friends quotes instead of sudo-latin. There's a browser-based version in `./website` and a Rust CLI version in `./rust`.
 
-## Install
+## Quick install
 
-You can't really _install_ a website, so just head to [johnnymatthews.github.io/friendsum](https://johnnymatthews.github.io/friendsum/) to view it.
+Run this to increase your happiness by at least 4:
 
-If you want to run the Rust binary, you can grab it from the Releases section and run it wherever you want.
+```shell
+wget https://github.com/johnnymatthews/friendsum/releases/download/v1.0.0/friendsum-v1-0-0.tar.gz
+sudo tar -xvzf friendsum-v1-0-0.tar.gz -C /usr/local/bin
+friendsum 20
+```
+
+Or, you know, just [build it yourself](#build-the-rust-version)
 
 ## Run locally
 
-If you don't wanna use the live site, you can run things locally:
+If you don't wanna use the live site or the _Releases_ build, you can run things locally:
 
 ### Serve the website
 
